@@ -1,5 +1,6 @@
 package com.desafioipn.taskmanageripn.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,7 +20,12 @@ public class Task {
     private Boolean completed;
     private LocalDate dueDate;
 
+@ManyToOne
+@JoinColumn(name = "user_id")
+private User user;
+
     @ManyToOne()
     @JoinColumn(name = "project_id")
+    @JsonIgnoreProperties({"tasks","user"})
     private Project project;
 }

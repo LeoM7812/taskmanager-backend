@@ -1,6 +1,8 @@
 package com.desafioipn.taskmanageripn.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,7 +23,12 @@ public class Project {
     private String description;
 @OneToMany(mappedBy = "project" , cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Task> tasks;
+    private int budget;
 
+    @ManyToOne
+    @JoinColumn(name = "manager_id")
+    @JsonIgnoreProperties({"tasks", "projects"})
+    private User user;
 public void addTask(Task task) {
     tasks.add(task);
     task.setProject(this);
