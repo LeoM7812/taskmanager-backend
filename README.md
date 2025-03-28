@@ -43,4 +43,4 @@ ng serve
 Open your browser and access http://localhost:4200 🚀
 
 📢 Connect with Me
-I'm always open to discussions about software development, backend architecture, and full-stack development. Feel free to connect with me on LinkedIn or check out my other projects on GitHub!
+I'm always open to discussions about software development, backend architecture, and full-stack development. Feel free to connect with me on LinkedIn linkedin.com/in/leonardo-marques-2a1502250 or check out my other projects on GitHub!
